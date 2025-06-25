@@ -159,7 +159,7 @@ result == guess ? console.log('You win!') : console.log('You lose!');
 
 ---
 
-## 6i. In exercises [5i](../05-variables/README.md#5i-add-the-html-structure-doctype-html-html-head-body-add-a-title-with-the-text-calculator) - [5k](../05-variables/README.md#5k-use-the-shortcuts----and---in-5i-and-5j), we created the ‘Remove from cart', '-2', and '-3' buttons. Before updating the quantity, check if it will go below 0:
+## 6l. In exercises [5i](../05-variables/README.md#5i-add-the-html-structure-doctype-html-html-head-body-add-a-title-with-the-text-calculator) - [5k](../05-variables/README.md#5k-use-the-shortcuts----and---in-5i-and-5j), we created the ‘Remove from cart', '-2', and '-3' buttons. Before updating the quantity, check if it will go below 0:
 + If it will, create a popup saying 'Not enough items in the cart' and don't update the quantity.
 + Otherwise, update the quantity and console.log() it as usual.
 
