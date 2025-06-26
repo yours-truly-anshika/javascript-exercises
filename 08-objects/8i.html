@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>heads</button>
+  <button>tails</button>
+
+  <script>
+    let score = {
+      wins: 0,
+      losses: 0,
+    }
+
+    function playGame(guess){
+      let randomNum = Math.random();
+      let result = randomNum < 0.5 ? 'heads': 'tails';        
+
+      if (result == guess) {
+        console.log('You win!');
+        score.wins ++; 
+      } else {
+        console.log('You lose!');
+        score.losses ++;
+      }
+
+      console.log(`You guessed: ${guess}, Result: ${result}`);
+    }
+
+    let buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => playGame(btn.textContent.trim()));
+      });
+
+  </script>
+</body>
+</html>
