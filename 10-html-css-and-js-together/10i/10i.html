@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      width: 100%;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+    }
+    .conatiner {
+      text-align: left;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      color: whitesmoke;
+    }
+    button {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+      margin: 0 2px;
+      background-color: #333;
+      color: whitesmoke;
+      border: none;
+      border-radius: 50%;
+    }
+    .operator {
+      background-color: orange;
+    }
+    .result {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .clearBtn {
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="conatiner">
+    <P class="result"></P>
+
+    <p>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button class="operator"> + </button>
+    </p>
+
+    <p>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button class="operator"> - </button>
+    </p>
+
+    <p>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="operator"> * </button>
+    </p>
+
+    <p>
+      <button>0</button>
+      <button>.</button>
+      <button onclick="
+      calculation = eval(calculation);
+      localStorage.setItem('calculation', calculation);
+      displayCalculation();
+      "> = </button>
+      <button class="operator"> / </button>
+    </p>
+
+    <button class="clearBtn" onclick="
+    calculation = '';
+    localStorage.setItem('calculation', calculation);
+    displayCalculation();
+    ">Clear</button>
+  </div>
+  
+  <script>
+    let calculation = localStorage.getItem('calculation') || '';
+    
+    const buttons = document.querySelectorAll('button');
+
+    function displayCalculation() {
+      const resultElement = document.querySelector('.result');
+      resultElement.innerHTML = calculation || '0';
+    }
+
+    function updateCalculation(e) {
+      const value = e.target.innerHTML.trim();
+      if (value === '=' || value === 'Clear') return;
+
+      calculation += value;
+      localStorage.setItem('calculation', calculation);
+      displayCalculation();
+    }
+
+    buttons.forEach(btn => btn.addEventListener('click', updateCalculation));
+  </script>
+</body>
+</html>

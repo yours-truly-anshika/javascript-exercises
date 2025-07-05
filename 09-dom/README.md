@@ -75,7 +75,7 @@ Already did!
 
 ---
 
-## 9g. Create a 9g.html and copy the code from 09-dom-projects.html into this file. In the Amazon Shipping Calculator, enter a cost of 7.99 and click 'Calculate'. What issue do you see? Find a fix for this issue. 
+## 9g. Create a 9g.html and copy the code from [09-dom-projects.html](https://github.com/SuperSimpleDev/javascript-course/blob/main/2-copy-of-code/09-dom-projects.html) into this file. In the Amazon Shipping Calculator, enter a cost of 7.99 and click 'Calculate'. What issue do you see? Find a fix for this issue. 
 
 > **SOLUTION :**
 
