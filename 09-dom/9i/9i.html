@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+
+    <button class="textBtn">Add to Cart</button>
+    <button class="textBtn">Remove from cart</button>
+    <button class="numberBtn"> + 2</button>
+    <button class="numberBtn"> + 3</button>
+    <button class="numberBtn"> + 4</button>
+    <button class="numberBtn"> + 5</button>
+    <button class="numberBtn"> - 2</button>
+    <button class="numberBtn"> - 3</button>
+
+    <button onclick="
+      cartQuantity = 0;
+      alert('Cart was reset.');
+      localStorage.setItem('cartQuantity', JSON.stringify(cartQuantity));
+      displayText();
+    ">Reset Cart</button>
+
+    <p></p>
+
+    <script>
+      let cartQuantity = JSON.parse(localStorage.getItem('cartQuantity')) || 0;
+
+      let buttons = document.querySelectorAll('.textBtn, .numberBtn');
+      let textBtn = document.querySelectorAll('.textBtn');
+      let numberBtn = document.querySelectorAll('.numberBtn');
+
+      let displayText = function() {
+          document.querySelector('p').textContent = `Cart quantity: ${cartQuantity}`;
+        }
+      let maxOrMin = function(sign, number) {
+        if (sign === '+' && cartQuantity + number > 10){
+          alert('The cart is full');
+          return true;
+        } else if (sign === '-' && cartQuantity - number < 0){
+            alert('Not enough items in the cart');
+            return true;
+        } else {
+          return false;
+        }
+      }
+
+      function updateCartQuantity(e){
+        let btnText = e.target.textContent.trim();
+        let sign = btnText[0];  
+        let number = parseInt(btnText.slice(1));
+        displayText();
+
+        if (e.target.classList.contains('textBtn')) {
+          if(btnText === 'Add to Cart') {
+            cartQuantity >= 10 ? alert('The cart is full') : cartQuantity++;
+            localStorage.setItem('cartQuantity', JSON.stringify(cartQuantity));
+          } else if (btnText === 'Remove from cart') {
+            cartQuantity <= 0 ? alert('Not enough items in the cart') : cartQuantity--;
+            localStorage.setItem('cartQuantity', JSON.stringify(cartQuantity)); 
+          }
+        } else if (e.target.classList.contains('numberBtn')) {
+          if (!maxOrMin(sign, number)) {
+            if (sign === '+') {
+              cartQuantity += number;
+              localStorage.setItem('cartQuantity', JSON.stringify(cartQuantity));
+            } else if (sign === '-') {
+              cartQuantity -= number;
+              localStorage.setItem('cartQuantity', JSON.stringify(cartQuantity));
+            }
+          } 
+        }
+        
+        displayText();
+      }
+
+      displayText();
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', updateCartQuantity);
+      });
+    </script>
+  </body>
+</html>

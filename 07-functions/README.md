@@ -184,26 +184,23 @@ function convertLength(length, from, to){
 > **SOLUTION :**
 
 ```js
-function greet(name){
-  if (sign === '+') {
-    if (cartQuantity + number > 10) {
-      alert('The cart is full');
-      return;
-    }
-    cartQuantity += number;
+if (sign === '+') {
+  if (cartQuantity + number > 10) {
+    alert('The cart is full');
+    return;
   }
-
-  if (sign === '-') {
-    if (cartQuantity - number < 0) {
-      alert('Not enough items in the cart');
-      return;
-    }
-    cartQuantity -= number;
-  }
-
-  console.log(`Cart quantity: ${cartQuantity}`);
-  }
+  cartQuantity += number;
 }
+
+if (sign === '-') {
+  if (cartQuantity - number < 0) {
+    alert('Not enough items in the cart');
+    return;
+  }
+  cartQuantity -= number;
+}
+
+console.log(`Cart quantity: ${cartQuantity}`);
 ```
 
 ---
