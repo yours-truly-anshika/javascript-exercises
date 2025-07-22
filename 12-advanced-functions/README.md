@@ -406,8 +406,8 @@ document.body.addEventListener('keydown', (event) => {
 > **SOLUTION :**
 
   + View full code here: 
-    - [12r.html](./12r/12r.html)
-    - [12r.css](./12r/12r.css)
-    - [12r.js](./12r/12r.js)
+    - [12x.html](./12x/12x.html)
+    - [12x.css](./12x/12x.css)
+    - [12x.js](./12x/12x.js)
 
 ---
