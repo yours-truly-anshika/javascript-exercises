@@ -60,3 +60,17 @@ const selectedQuantity = quantitySelector.value;
 Done!
 
 ---
+
+## 13g. We'll add some more products to the page.
+
+  + Inside data/products.js add some more objects to the array.
+  + For the id, use any id that you want, like 'id1', 'id2' etc. (just make sure its unique).
+  + For the image, I've provided "images/products/backpack.jpg" and "images/products/umbrella.jpg" or find an image yourself online.
+  + For the name, rating and priceCents, use any values that you want.
+
+---
+
+> **SOLUTION :**
+
+
+---
