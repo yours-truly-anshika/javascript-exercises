@@ -63,14 +63,28 @@ Done!
 
 ## 13g. We'll add some more products to the page.
 
-  + Inside data/products.js add some more objects to the array.
+  + Inside [data/products.js](./project-folder/data/products.js) add some more objects to the array.
   + For the id, use any id that you want, like 'id1', 'id2' etc. (just make sure its unique).
-  + For the image, I've provided "images/products/backpack.jpg" and "images/products/umbrella.jpg" or find an image yourself online.
+  + For the image, I've provided "[images/products/backpack.jpg](./project-folder/images/products/backpack.jpg)" and "[images/products/umbrella.jpg](./project-folder/images/products/umbrella.jpg)" or find an image yourself online.
   + For the name, rating and priceCents, use any values that you want.
 
 ---
 
 > **SOLUTION :**
 
++ View full code here: [product.js](project-folder/data/products.js)
+
+---
+
+## 13h. We'll review some JavaScript shortcuts we can use. In [amazon.js](./project-folder/scripts/amazon.js):
+
+  + Search for the code 'const productId = button.dataset.productId;' and use the destructuring shortcut to simplify it.
+  + Search for 'cart.push({' and use shorthand property in the 2 lines below this code.
+
+---
+
+> **SOLUTION :**
+
++ View full code here: [product.js](project-folder/data/products.js)
 
 ---
