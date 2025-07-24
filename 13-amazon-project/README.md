@@ -22,7 +22,7 @@ Done!
 </select>
 ```
 
-+ View full code here: [amazon.js](project-folder/scripts/amazon.js)
++ View full code here: [amazon.js](./project-folder/scripts/amazon.js)
 
 ---
 
@@ -50,7 +50,7 @@ const selectedQuantity = quantitySelector.value;
 
 > **SOLUTION :**
 
-+ View full code here: [amazon.js](project-folder/scripts/amazon.js)
++ View full code here: [amazon.js](./project-folder/scripts/amazon.js)
 
 ---
 
@@ -72,7 +72,7 @@ Done!
 
 > **SOLUTION :**
 
-+ View full code here: [product.js](project-folder/data/products.js)
++ View full code here: [product.js](./project-folder/data/products.js)
 
 ---
 
@@ -85,6 +85,73 @@ Done!
 
 > **SOLUTION :**
 
-+ View full code here: [product.js](project-folder/data/products.js)
++ View full code here: [product.js](./project-folder/data/products.js)
+
+---
+
+## 13i. Add the unique class to this element (like we did in exercise [13b](#13b-when-generating-the-html-add-a-unique-class-to-select-to-iidentify-which-product-the-dropdown-is-for-classjs-quality-selector-productid)) to identify which product it is for.
+
+---
+
+> **SOLUTION :**
+
++ View full code here: [amazon.js](./project-folder/scripts/amazon.js)
+
+---
+
+## 13j. When clicking 'Add to Cart', use the DOM to get the 'Added' message element for the product (like we did in exercise [13c](#13c-when-clicking-the-add-to-cart-button-use-the-dom-to-get-quantity-selector-the-select-element-for-the-product-hint-use-documentqueryselectorjs-quality-selector-productid))
+
+> **SOLUTION :**
+
+```js
+const addedProduct = document.querySelector(`.js-added-product-${productId}`);
+```
+
++ View full code here: [amazon.js](./project-folder/scripts/amazon.js)
+
+---
+
+## 13k. Add a class to the message element using .classList.add(). Then, in [style/pages/amazon.css](./project-folder/styles/pages/amazon.css), style this class so it has opacity: 1;
+
+> **SOLUTION :**
+
+```js
+addedProduct.classList.add('added-to-cart-visible');
+```
+```css
+.added-to-cart-visible {
+  opacity: 1;
+}
+```
+
++ View full code here: 
+  - [amazon.js](./project-folder/scripts/amazon.js)
+  - [amazon.css](./project-folder/styles/pages/amazon.css)
+---
+
+## 13l. After 2 seconds (use setTimeout), make the message disappear by removing the class.
+
+> **SOLUTION :**
+
+```js
+setTimeout(() => {
+  addedProduct.classList.remove('added-to-cart-visible');
+}, 2000);
+```
+
++ View full code here: [amazon.js](./project-folder/scripts/amazon.js)
+
+---
+
+## 13m. If we click 'Add to cart', wait 1 to 1.5 seconds, and click again, the message disappears quickly (since the previous setTimeout is still running and will make the message disappear soon).
+
+  + Modify the code so when we click 'Add to cart', it "refreshes" the 2 second wait time (waits 2 seconds again and message disappears)
+  + Hint: you can cancel the previous setTimeout using clearTimeout()
+
+---
+
+> **SOLUTION :**
+
++ View full code here: [amazon.js](./project-folder/scripts/amazon.js)
 
 ---
