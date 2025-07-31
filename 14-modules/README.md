@@ -42,3 +42,8 @@ Hints:
   - [checkout.js](./project-folder/scripts/checkout.js)
 
 ---
+
+## 14d. If we open the home page ([amazon.html](./project-folder/amazon.html)) notice the cart quantity in the top-right always starts at 0.
+
+  + Remove the text "O" (so the cart quantity starts as blank)
+  + When the page loads, calculate the cart quantity and display it in the top right (reuse the updateCartQuantity function)
