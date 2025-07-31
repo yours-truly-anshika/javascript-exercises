@@ -2,11 +2,21 @@ import { cart, removeFromCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
 
+function updateCartQuantity() {
+  let cartQuantity = 0;
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+  document.querySelector('.return-to-home-link').innerHTML = cartQuantity;
+}
+
 let cartSummaryHTML = '';
 cart.forEach((cartItem) => {
   const productId = cartItem.productId;
 
   let matchingProduct;
+
+  updateCartQuantity();
 
   products.forEach((product) => {
     if (product.id === productId) {
@@ -102,5 +112,6 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
 
     const container = document.querySelector(`.js-cart-item-container-${productId}`);
     container.remove();
+    updateCartQuantity();
   });
 });
