@@ -103,3 +103,31 @@ document.querySelectorAll('.js-update-link').forEach((link) => {
   - [checkout.css](./project-folder/styles/pages/checkout/checkout.css)
 
 ---
+
+## 14h. Make "Save" appear when clicking "Update"
+
+  + When clicking "Update", get the cart-item-container for the product, and add the class "is-editing-quantity" to the container (use .classList)
+  + In [checkout.css](./project-folder/styles/pages/checkout/checkout.css), style the `<input>` & "Save" link and add display: none; (they will be invisible at the start)
+  + The CSS ".is-editing-quantity .quantity-input {...}" styles elements with class "quantity-input" inside an element with class "is-editing-quantity"
+  + Use this, and "display: initial;" (resets the display property) to make the `<input>` appear when editing the quantity. Same for the "Save" link.
+
+---
+
+> **SOLUTION :**
+
++ View full code here: 
+  - [checkout.js](./project-folder/scripts/checkout.js)
+  - [checkout.css](./project-folder/styles/pages/checkout/checkout.css)
+
+---
+
+## 14i. Using similar CSS selectors as [14h](#14h-make-save-appear-when-clicking-update), make the quantity and "Update" link disappear when editing the quantity.
+
+> **SOLUTION :**
+
++ View full code here: 
+  - [checkout.js](./project-folder/scripts/checkout.js)
+  - [checkout.css](./project-folder/styles/pages/checkout/checkout.css)
+
+---
+
