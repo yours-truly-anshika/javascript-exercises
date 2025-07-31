@@ -71,3 +71,35 @@ Hints:
   - [checkout.js](./project-folder/scripts/checkout.js)
 
 ---
+
+## 14f.  In [checkout.js](./project-folder/scripts/checkout.js), get all the "Update" links from the page and add a "click" event listener to each link. Also, attach the productid to each link. When clicking the link, get the productid and console.log() it.
+
+> **SOLUTION :**
+
+```js
+document.querySelectorAll('.js-update-link').forEach((link) => {
+  link.addEventListener('click', () => {
+    const productId = link.dataset.productId;
+    console.log(productId)
+  });
+});
+```
+
+---
+
+## 14g. Add 2 HTML elements after the "Update" link:
+
+  + An `<input class="quantity-input">` (for entering a new quantity)
+  + A `<span class="save-quantity-link">Save</span>` (to save the quantity)
+  + Style the `<input>` and set its width to 30px (put the styles in the file: styles/pages/checkout/checkout.css)
+  + Add the class "link-primary" to the `<span>`
+
+---
+
+> **SOLUTION :**
+
++ View full code here: 
+  - [checkout.js](./project-folder/scripts/checkout.js)
+  - [checkout.css](./project-folder/styles/pages/checkout/checkout.css)
+
+---
