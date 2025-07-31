@@ -47,3 +47,27 @@ Hints:
 
   + Remove the text "O" (so the cart quantity starts as blank)
   + When the page loads, calculate the cart quantity and display it in the top right (reuse the updateCartQuantity function)
+
+---
+
+> **SOLUTION :**
+
++ View full code here: [amazon.js](./project-folder/scripts/amazon.js)
+
+---
+
+## 14e.  Inside the function updateCartQuantity, we have some code that calculates the cart quantity (creates a variable, loops through the cart, and adds up all the quantities). Notice this code is repeated in [checkout.js](./project-folder/scripts/checkout.js) and [amazon.js](./project-folder/scripts/amazon.js).
+
+  + Create a function calculateCartQuantity() and move this code into the function so we can reuse it
+  + Put calculateCartQuantity() inside [cart.js](./project-folder/data/cart.js) (because this code relates to the cart) and use export/import to share it between the 2 files
+
+---
+
+> **SOLUTION :**
+
++ View full code here: 
+  - [cart.js](./project-folder/data/cart.js)
+  - [amazon.js](./project-folder/scripts/amazon.js)
+  - [checkout.js](./project-folder/scripts/checkout.js)
+
+---
