@@ -121,16 +121,31 @@ document.querySelectorAll('.js-update-link').forEach((link) => {
   });
 });
 
-document.querySelectorAll('.save-quantity-link').forEach((link) => {
-  link.addEventListener('click', () => {
-    const productId = link.dataset.productId;
+function validateQuantityInput(link) {
+  const productId = link.dataset.productId;
     
-    const container = document.querySelector(`.js-cart-item-container-${productId}`);
-    container.classList.remove('is-editing-quantity');
+  const container = document.querySelector(`.js-cart-item-container-${productId}`);
+  container.classList.remove('is-editing-quantity');
 
-    const quantityInput = Number(document.querySelector('.quantity-input').value);
+  const quantityInput = Number(container.querySelector('.quantity-input').value);
 
-    document.querySelector(`.quantity-label`).textContent = quantityInput;
+  if ( quantityInput >= 0 && quantityInput < 1000) {
+    container.querySelector(`.quantity-label`).textContent = quantityInput;
     updateQuantity(productId, quantityInput);
+  } else {
+    alert('Please enter a valid quantity between 0 and 1000.');
+  }
+}
+
+document.querySelectorAll('.save-quantity-link').forEach((link) => {
+  link.addEventListener('click', validateQuantityInput.bind(null, link));
+});
+
+document.querySelectorAll('.quantity-input').forEach((inputField) => {
+  inputField.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      const link = inputField.nextElementSibling;
+      validateQuantityInput(link);
+    }
   });
 });

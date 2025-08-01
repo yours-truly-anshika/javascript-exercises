@@ -186,6 +186,8 @@ export function updateQuantity(productId, newQuantity) {
   + Inside the product
   + Inside the header at the top
 
+---
+
 > **solution :**
 
 ```js
@@ -198,5 +200,28 @@ export function updateQuantity(productId, newQuantity) {
 ```
 
 + View full code here: [cart.js](./project-folder/data/cart.js)
+
+---
+
+## 14n. Try to come up with more features to add to the "Update" link like':
+  + Add validation (check the new quantiy is >= 0 and < 1000)
+  + Add keyboard support (Allow updating by pressing 'Enter')
+
+---
+
+> **solution :**
+
+```js
+document.querySelectorAll('.quantity-input').forEach((inputField) => {
+  inputField.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      const link = inputField.nextElementSibling;
+      validateQuantityInput(link);
+    }
+  });
+});
+```
+
++ View full code here: [checkout.js](./project-folder/scripts/checkout.js)
 
 ---
