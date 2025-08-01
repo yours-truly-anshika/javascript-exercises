@@ -131,3 +131,35 @@ document.querySelectorAll('.js-update-link').forEach((link) => {
 
 ---
 
+## 14j. Now we'll implement switching between "Update" and "Save". Add "click" event listeners to all "Save" links. When clicking "Save", do the opposite of "Update": get the cart-item-container for the product, and remove the class "is-editing-quantity". This should reverse all the styling that's applied when editing the quantity.
+
+> **SOLUTION :**
+
+```js
+document.querySelectorAll('.save-quantity-link').forEach((link) => {
+  link.addEventListener('click', () => {
+    const productId = link.dataset.productId;
+    
+    const container = document.querySelector(`.js-cart-item-container-${productId}`);
+    container.classList.remove('is-editing-quantity');
+  });
+});
+```
+
++ View full code here: [checkout.js](./project-folder/scripts/checkout.js)
+
+---
+
+## 14k. When clicking "Save", use the DOM to get the quantity `<input>`  for the product, and get the value inside (remember to convert this value to a number). This will be the new quantity of the product in the cart.
+
+> **SOLUTION :**
+
+```js
+const quantityInput = Number(document.querySelector('.quantity-input').value);
+
+document.querySelector(`.quantity-label`).textContent = quantityInput;
+```
+
++ View full code here: [checkout.js](./project-folder/scripts/checkout.js)
+
+---
