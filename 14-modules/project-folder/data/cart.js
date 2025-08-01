@@ -57,3 +57,10 @@ export function calculateCartQuantity(querySelectorClass) {
   document.querySelector(querySelectorClass)
     .innerHTML = cartQuantity;
 }
+
+export function updateQuantity(productId, newQuantity) {
+  const matchingItem = cart.find(item => item.productId === productId);
+  matchingItem.quantity = newQuantity;
+  saveToStorage();
+  calculateCartQuantity('.return-to-home-link');
+}

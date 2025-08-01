@@ -163,3 +163,40 @@ document.querySelector(`.quantity-label`).textContent = quantityInput;
 + View full code here: [checkout.js](./project-folder/scripts/checkout.js)
 
 ---
+
+## 14l. In [cart.js](./project-folder/data/cart.js), create a function updateQuantity(productID, newQuantity) which will find a matching productId in the cart, and update its quantity to the new quantity (remember to save to storage after).
+
+> **SOLUTION :**
+
+```js
+export function updateQuantity(productId, newQuantity) {
+  const matchingItem = cart.find(item => item.productId === productId);
+  matchingItem.quantity = newQuantity;
+  saveToStorage();
+}
+```
+
++ View full code here:
+  - [cart.js](./project-folder/data/cart.js)
+  - [checkout.js](./project-folder/scripts/checkout.js)
+
+---
+
+## 14m. Now that we've updated the quantity in the cart, the last step is to update the quantity in the HTML. Update these 2 places:
+  + Inside the product
+  + Inside the header at the top
+
+> **solution :**
+
+```js
+export function updateQuantity(productId, newQuantity) {
+  const matchingItem = cart.find(item => item.productId === productId);
+  matchingItem.quantity = newQuantity;
+  saveToStorage();
+  calculateCartQuantity('.return-to-home-link');
+}
+```
+
++ View full code here: [cart.js](./project-folder/data/cart.js)
+
+---
